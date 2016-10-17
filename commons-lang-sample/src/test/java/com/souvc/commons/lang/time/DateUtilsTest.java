@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.apache.commons.lang.time.DateFormatUtils;
 import org.apache.commons.lang.time.DateUtils;
 import org.junit.Test;
 /**
@@ -12,7 +13,7 @@ import org.junit.Test;
  * 包名：  org.apache.commons.lang.sample.time </br> 
  * 描述: org.apache.commons.lang.time.DateUtils(常用的一些函数）</br> 
  * 发布版本号：V1.0</br>
- * 开发人员：liuhf</br>
+ * 开发人员：souvc </br>
  * 创建时间： 2016年10月14日</br>
  */
 public class DateUtilsTest {
@@ -20,36 +21,37 @@ public class DateUtilsTest {
 	//一个日期对象＋n天增加n天
 	@Test
 	public void addDays(){
-		Date nowdate=new Date();
-		System.out.println(nowdate);
+		System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
 		Date newdate=DateUtils.addDays(new Date(), 1);
-		System.out.println(newdate);
+		System.out.println(DateFormatUtils.format(newdate, "yyyy-MM-dd HH:mm:ss"));
 	}
 	
 	
 	//一个日期对象＋n小时
 	@Test
 	public void addHours(){
-		Date nowdate=new Date();
-		System.out.println(nowdate);
+		System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
 		Date newdate=DateUtils.addHours(new Date(), 1);
-		System.out.println(newdate);
+		System.out.println(DateFormatUtils.format(newdate, "yyyy-MM-dd HH:mm:ss"));
 	}
 	
 	
 	//一个日期对象+n毫秒
-	
 	@Test
 	public void addMilliseconds(){
-		Date nowdate=new Date();
-		System.out.println(nowdate);
-		Date newdate=DateUtils.addMilliseconds(new Date(), 1);
-		System.out.println(newdate);
+		System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
+		Date newdate=DateUtils.addMilliseconds(new Date(), 100);
+		System.out.println(DateFormatUtils.format(newdate, "yyyy-MM-dd HH:mm:ss"));
 	}
 	
 	
 	//一个日期对象+n分
-	
+	@Test
+	public void addMinutes(){
+		System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
+		Date newdate=DateUtils.addMinutes(new Date(), 1);
+		System.out.println(DateFormatUtils.format(newdate, "yyyy-MM-dd HH:mm:ss"));
+	}
 	
 	//一个日期对象＋n月
 	

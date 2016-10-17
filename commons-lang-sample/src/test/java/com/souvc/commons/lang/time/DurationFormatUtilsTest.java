@@ -1,19 +1,13 @@
 package com.souvc.commons.lang.time;
 
 import java.text.ParseException;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
-import org.apache.commons.lang.time.DateUtils;
-import org.apache.commons.lang.time.DurationFormatUtils;
 
 /**
  * 类名: DurationFormatUtilsTest.java</br>
  * 包名： com.souvc.javaapi.apache.common.lang3.time </br>
  * 描述: DurationFormatUtils 计算时间段</br>
  * 发布版本号：V1.0</br>
- * 开发人员：liuhf</br>
+ * 开发人员：souvc</br>
  * 创建时间： 2016年8月25日</br>
  */
 public class DurationFormatUtilsTest {
