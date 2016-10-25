@@ -1,7 +1,9 @@
 
 package com.souvc.commons.lang.time;
 
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -121,6 +123,22 @@ public class DateUtilsTest {
 		System.out.println(DateFormatUtils.format(newdate, "yyyy-MM-dd HH:mm:ss"));
 	}
 	
+	
+	/**
+	 * 截取日期
+	 */
+	@Test
+	public void truncate(){
+		
+		Date date = new Date();
+	    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+	    System.out.println(dateFormat.format(DateUtils.truncate(date, Calendar.HOUR_OF_DAY)));//2016-08-15 16:00:00
+	    System.out.println(dateFormat.format(DateUtils.truncate(date, Calendar.MINUTE)));//2016-08-15 16:45:00
+	    System.out.println(dateFormat.format(DateUtils.truncate(date, Calendar.SECOND))); //2016-08-15 16:45:08
+	    System.out.println(dateFormat.format(DateUtils.truncate(date, Calendar.DAY_OF_MONTH))); //2016-08-15 00:00:00
+	    System.out.println(dateFormat.format(DateUtils.truncate(date, Calendar.MONTH))); //2016-08-01 00:00:00
+	    System.out.println(dateFormat.format(DateUtils.truncate(date, Calendar.YEAR))); //2016-01-01 00:00:00
+	}
 	
 	
 	//两个日期对象是否相等（只比较年－月－日）
