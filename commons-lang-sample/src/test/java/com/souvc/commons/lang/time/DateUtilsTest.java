@@ -8,6 +8,7 @@ import java.util.Date;
 import org.apache.commons.lang.time.DateFormatUtils;
 import org.apache.commons.lang.time.DateUtils;
 import org.junit.Test;
+
 /**
  * 类名: DateUtilsTest.java</br> 
  * 包名：  org.apache.commons.lang.sample.time </br> 
@@ -18,6 +19,26 @@ import org.junit.Test;
  */
 public class DateUtilsTest {
 
+	
+	/**
+	 * 日期对象的加减   ---- 年月日 ，时分秒  ，星期
+	 */
+	//一个日期对象＋N年
+	@Test
+	public void addYears(){
+		System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
+		Date newdate=DateUtils.addYears(new Date(), 1);
+		System.out.println(DateFormatUtils.format(newdate, "yyyy-MM-dd HH:mm:ss"));
+	}
+	
+	//一个日期对象＋n月
+	@Test
+	public void addMonths(){
+		System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
+		Date newdate=DateUtils.addMonths(new Date(), 1);
+		System.out.println(DateFormatUtils.format(newdate, "yyyy-MM-dd HH:mm:ss"));
+	}
+	
 	//一个日期对象＋n天增加n天
 	@Test
 	public void addDays(){
@@ -36,6 +57,23 @@ public class DateUtilsTest {
 	}
 	
 	
+	//一个日期对象+n分
+	@Test
+	public void addMinutes(){
+		System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
+		Date newdate=DateUtils.addMinutes(new Date(), 1);
+		System.out.println(DateFormatUtils.format(newdate, "yyyy-MM-dd HH:mm:ss"));
+	}
+	
+	
+	//一个日期对象＋n秒
+	@Test
+	public void addSeconds(){
+		System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
+		Date newdate=DateUtils.addSeconds(new Date(), 1);
+		System.out.println(DateFormatUtils.format(newdate, "yyyy-MM-dd HH:mm:ss"));
+	}
+	
 	//一个日期对象+n毫秒
 	@Test
 	public void addMilliseconds(){
@@ -45,23 +83,44 @@ public class DateUtilsTest {
 	}
 	
 	
-	//一个日期对象+n分
+	//一个日期对象＋N个星期
 	@Test
-	public void addMinutes(){
+	public void addWeeks(){
 		System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
-		Date newdate=DateUtils.addMinutes(new Date(), 1);
+		Date newdate=DateUtils.addWeeks(new Date(), 1);
 		System.out.println(DateFormatUtils.format(newdate, "yyyy-MM-dd HH:mm:ss"));
 	}
 	
+	
+	/**
+	 * 如果是日期相减的话  其他以此类推
+	 */
+	
+	@Test
+	public void subtractYears(){
+		System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
+		Date newdate=DateUtils.addYears(new Date(), -1);
+		System.out.println(DateFormatUtils.format(newdate, "yyyy-MM-dd HH:mm:ss"));
+	}
+	
+	
 	//一个日期对象＋n月
+	@Test
+	public void subtractMonths(){
+		System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
+		Date newdate=DateUtils.addMonths(new Date(), -1);
+		System.out.println(DateFormatUtils.format(newdate, "yyyy-MM-dd HH:mm:ss"));
+	}
 	
-	//一个日期对象＋n秒
 	
+	//一个日期对象＋n天增加n天
+	@Test
+	public void subtractDays(){
+		System.out.println(DateFormatUtils.format(new Date(), "yyyy-MM-dd HH:mm:ss"));
+		Date newdate=DateUtils.addDays(new Date(), -1);
+		System.out.println(DateFormatUtils.format(newdate, "yyyy-MM-dd HH:mm:ss"));
+	}
 	
-	//一个日期对象＋N个星期
-	
-	
-	//一个日期对象＋N年
 	
 	
 	//两个日期对象是否相等（只比较年－月－日）
