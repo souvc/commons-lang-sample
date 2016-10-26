@@ -25,3 +25,41 @@
 </dependency>
 
 ```
+
+##测试项目目录
+
+
+* com.souvc.commons.lang-sample.lang
+
+	* math
+	
+	* time
+	
+		* [DateFormatUtilsTest](https://github.com/souvc/commons-lang-sample/blob/master/commons-lang-sample/src/test/java/com/souvc/commons/lang/time/DateFormatUtilsTest.java)
+		
+		* [DateUtilsTest](https://github.com/souvc/commons-lang-sample/blob/master/commons-lang-sample/src/test/java/com/souvc/commons/lang/time/DateUtilsTest.java)
+		
+		* DurationFormatUtilsTest
+		
+		* FastDateParserTest
+		
+		* FastDatePrinterTest
+		
+		* StopWatchTest
+	
+	* ArrayUtilsTest
+	
+	* RandomStringUtilsTest
+	
+	* RandomUtilsTest
+	
+	* StringUtilsTest
+	
+	* StringUtilsTest
+
+* com.souvc.commons.lang-sample.lang3
+
+
+
+
+
