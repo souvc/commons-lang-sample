@@ -129,7 +129,6 @@ public class DateUtilsTest {
 	 */
 	@Test
 	public void truncate(){
-		
 		Date date = new Date();
 	    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
 	    System.out.println(dateFormat.format(DateUtils.truncate(date, Calendar.HOUR_OF_DAY)));//2016-08-15 16:00:00
@@ -141,6 +140,16 @@ public class DateUtilsTest {
 	}
 	
 	
+	
+	//转换日期
+	@Test
+	public void parseDate() throws ParseException{
+		String[] format={"yyyy-MM-dd"};
+		System.out.println(DateUtils.parseDate("2009-10-20",format));
+	}
+		
+	
+	
 	//两个日期对象是否相等（只比较年－月－日）
 	
 	
@@ -148,63 +157,23 @@ public class DateUtilsTest {
 	
 	
 	@Test
-	public void isSameDay(){
-		
-		Date nowdate=new Date();
-		System.out.println("nowdate："+nowdate);
-		
-		
-		Date newdate=DateUtils.addDays(new Date(), 1);
-		System.out.println("newdate："+newdate);
-		
+	public void isSameDay() throws ParseException{
 		String[] format={"yyyy-MM-dd HH:mm:ss"};
-		try {
-			Date parseDate=DateUtils.parseDate("2016-10-15 15:46:55",format);
-			System.out.println("parseDate:"+parseDate);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		System.out.println(DateUtils.isSameDay(nowdate, nowdate));
-		System.out.println(DateUtils.isSameDay(nowdate, newdate));
-		
+		Date date1=DateUtils.parseDate("2016-10-26 12:31:54",format);
+		Date date2=DateUtils.parseDate("2016-10-26 12:31:55",format);
+		System.out.println("date1:"+date1);
+		System.out.println("date2:"+date2);
+		System.out.println(DateUtils.isSameDay(date1, date2));
 	}
 	
 	@Test
-	public void isSameInstant(){
-		
-		Date nowdate=new Date();
-		System.out.println("nowdate："+nowdate);
-		
-		
-		Date newdate=DateUtils.addDays(new Date(), 1);
-		System.out.println("newdate："+newdate);
-		
+	public void isSameInstant() throws ParseException{
 		String[] format={"yyyy-MM-dd HH:mm:ss"};
-		try {
-			Date parseDate=DateUtils.parseDate("2016-10-15 15:46:55",format);
-			System.out.println("parseDate:"+parseDate);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		
-		System.out.println(DateUtils.isSameInstant(nowdate, nowdate));
-		System.out.println(DateUtils.isSameInstant(nowdate, newdate));
-		
+		Date date1=DateUtils.parseDate("2016-10-26 12:31:54",format);
+		Date date2=DateUtils.parseDate("2016-10-26 12:31:55",format);
+		System.out.println(DateUtils.isSameInstant(date1, date2));
 	}
 	
-	
-	
-	
-	//转换日期
-	@Test
-	public void parseDate(){
-		String[] format={"yyyy-MM-dd"};
-		try {
-			System.out.println(DateUtils.parseDate("2009-10-20",format));
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-	}
 	
 	
 	
@@ -239,17 +208,13 @@ public class DateUtilsTest {
      */
 	@Test
 	public void truncatedCompareTo(){
-		
 		Date nowdate=new Date();
 		System.out.println("nowdate："+nowdate);
-		
 		Date newdate=DateUtils.addDays(new Date(), 1);
 		System.out.println("newdate："+newdate);
-		
 		System.out.println("----->"+DateUtils.truncatedCompareTo(nowdate, newdate, Calendar.SECOND));
 		System.out.println("----->"+DateUtils.truncatedCompareTo(nowdate, nowdate, Calendar.SECOND));
 		System.out.println("----->"+DateUtils.truncatedCompareTo(newdate, nowdate, Calendar.SECOND));
-		
 	}
 	
 	
@@ -262,13 +227,11 @@ public class DateUtilsTest {
      */
 	@Test
 	public void truncatedCompareTo2(){
-		
 		Calendar calendar = Calendar.getInstance();
 		Calendar calendar2 = Calendar.getInstance();
-		
 		System.out.println("----->"+DateUtils.truncatedCompareTo(calendar, calendar2, Calendar.SECOND));
 		
-		}
+	}
 	
 	
 	
