@@ -43,11 +43,18 @@ public class NumberUtilsTest {
     public void  to(){
 
         System.out.println(NumberUtils.toInt("5"));
+        System.out.println(NumberUtils.toInt("a"));//不是数字的时候默认为 0
+
         System.out.println(NumberUtils.toLong("5"));
         System.out.println(NumberUtils.toByte("3"));
-        System.out.println(NumberUtils.toFloat(""));
+
+        System.out.println(NumberUtils.toFloat(""));//空的时候默认为0.0
+
         System.out.println(NumberUtils.toDouble("4"));
         System.out.println(NumberUtils.toShort("3"));
+
+        System.out.println(NumberUtils.toDouble("0000000000596"));//596.0
+        System.out.println(NumberUtils.toDouble("0000000000.596"));//0.596
 
         //主要可以做安全转换工作
         System.out.println(NumberUtils.toDouble(null));
